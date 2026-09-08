@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aksarakatnya — Font</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/font-page.css">
+</head>
+
+<body class="font-page-body">
+  <header class="site-header">
+    <nav class="nav-grid">
+      <a class="nav-cell" href="./index.html#collection">Fonts</a>
+      <a class="nav-cell" href="./index.html#license">License</a>
+
+      <a class="nav-cell brand-cell" href="./index.html">
+        <span class="brand-side">cultural typefaces</span>
+        <img src="./assets/images/aksarakatnya.svg" alt="Aksarakatnya" class="brand-logo">
+        <span class="brand-side brand-side-right">foundry</span>
+      </a>
+
+      <a class="nav-cell" href="#">Sign In</a>
+      <a class="nav-cell" href="#">Cart</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="font-hero">
+      <div class="font-hero-meta">
+        <span id="detailNameSmall">Typeface</span>
+        <span id="detailStyle">Regular</span>
+      </div>
+
+      <h1 id="detailName">Typeface</h1>
+
+      <div id="detailHeroSample" class="detail-font detail-hero-sample">
+        ꦲꦤꦕꦫꦏ
+      </div>
+    </section>
+
+    <section class="tester-section">
+      <div class="section-label">Type Tester</div>
+
+      <div class="tester-controls">
+        <label>
+          Size
+          <input id="sizeSlider" type="range" min="28" max="220" value="110">
+          <span id="sizeValue">110 px</span>
+        </label>
+
+        <label>
+          Line Height
+          <input id="lineSlider" type="range" min="90" max="220" value="120">
+          <span id="lineValue">1.20</span>
+        </label>
+
+        <button type="button" id="resetTester">Reset</button>
+
+        <input
+          id="latinInput"
+          class="latin-input"
+          type="text"
+          placeholder="ketik latin di sini..."
+          aria-label="Ketik teks Latin untuk ditransliterasi ke aksara Jawa"
+          autocomplete="off"
+          autocapitalize="off"
+          spellcheck="false"
+        >
+      </div>
+
+      <div
+        id="testerText"
+        class="detail-font tester-text"
+        contenteditable="true"
+        spellcheck="false"
+      >ꦲꦏ꧀ꦱꦫ ꦗꦮ ꦲꦶꦏꦸ ꦱꦶꦱ꧀ꦠꦺꦩ꧀ ꦠꦸꦭꦶꦱ꧀</div>
+    </section>
+
+    <section class="specimen-section">
+      <div class="section-label">Specimen / Regular</div>
+
+      <div class="specimen-row">
+        <span>Display</span>
+        <div class="detail-font specimen-xl" id="specimenDisplay">ꦲꦏ꧀ꦱꦫ ꦗꦮ</div>
+      </div>
+
+      <div class="specimen-row">
+        <span>Headline</span>
+        <div class="detail-font specimen-lg" id="specimenHeadline">ꦧꦸꦢꦪ ꦭꦤ꧀ ꦧꦱ</div>
+      </div>
+
+      <div class="specimen-row">
+        <span>Text</span>
+        <div class="detail-font specimen-md" id="specimenText">
+          ꦲꦏ꧀ꦱꦫ ꦗꦮ ꦢꦶꦒꦸꦤꦏꦏꦺ ꦏꦁꦒꦺ ꦤꦸꦭꦶꦱ꧀ ꦧꦱ ꦗꦮ ꦭꦤ꧀ ꦱꦗꦫꦃ ꦧꦸꦢꦪ ꦲꦶꦁ ꦤꦸꦱꦤ꧀ꦠꦫ꧉
+        </div>
+      </div>
+    </section>
+
+    <!-- FULL JAVANESE CHARACTER SET -->
+    <section class="glyphs-section" id="glyphs">
+      <div class="glyphs-heading">
+        <div>
+          <div class="section-label glyph-label">Character Set</div>
+          <h2>Glyphs</h2>
+        </div>
+
+        <div class="glyph-inspector" id="glyphInspector">
+          <span>Klik glyph untuk melihat kode Unicode</span>
+        </div>
+      </div>
+
+      <div id="glyphCategories"></div>
+    </section>
+
+    <!-- ABOUT FONT -->
+    <section class="about-font-section" id="about">
+      <div class="about-title">
+        <div class="section-label">About Font</div>
+        <h2 id="detailInfoName">Typeface</h2>
+      </div>
+
+      <div class="about-copy">
+        <p id="detailDescription">
+          Prototype font detail page.
+        </p>
+
+        <p>
+          Character-set viewer di atas menampilkan karakter Unicode yang
+          ter-encode di blok Javanese. Ketersediaan bentuk glyph sebenarnya
+          tetap mengikuti isi font yang sedang dipilih.
+        </p>
+
+        <div class="about-table">
+          <div class="about-row">
+            <span>Script</span>
+            <strong>Javanese</strong>
+          </div>
+
+          <div class="about-row">
+            <span>Unicode Block</span>
+            <strong>Javanese · U+A980–U+A9DF</strong>
+          </div>
+
+          <div class="about-row">
+            <span>Typeface</span>
+            <strong id="tableName"></strong>
+          </div>
+
+          <div class="about-row">
+            <span>Style</span>
+            <strong id="tableStyle"></strong>
+          </div>
+
+          <div class="about-row">
+            <span>Displayed Set</span>
+            <strong>91 assigned Unicode characters</strong>
+          </div>
+
+          <div class="about-row">
+            <span>Web Font</span>
+            <strong>WOFF2 / WOFF</strong>
+          </div>
+
+          <div class="about-row">
+            <span>Foundry</span>
+            <strong>Aksarakatnya</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="./assets/js/font-page.js"></script>
+</body>
+</html>

@@ -1,0 +1,491 @@
+body.font-page-body {
+  background: #fff;
+}
+
+.font-hero {
+  min-height: 76vh;
+  padding: 28px 28px 40px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.font-hero-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: 12px;
+}
+
+.font-hero h1 {
+  margin: 48px 0 0;
+  font-size: clamp(58px, 10vw, 168px);
+  font-weight: 400;
+  line-height: 0.92;
+  letter-spacing: -0.055em;
+}
+
+.detail-hero-sample {
+  margin-top: auto;
+  font-size: clamp(76px, 12vw, 210px);
+  line-height: 1.05;
+  white-space: nowrap;
+}
+
+.tester-section,
+.specimen-section {
+  padding: 26px;
+  border-bottom: 1px solid var(--line);
+}
+
+.section-label {
+  margin-bottom: 26px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #555;
+}
+
+.tester-controls {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.tester-controls label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+}
+
+.tester-controls button {
+  border: 1px solid var(--line);
+  background: #fff;
+  padding: 8px 18px;
+  cursor: pointer;
+}
+
+.latin-input {
+  flex: 1 1 420px;
+  min-width: 280px;
+  height: 42px;
+  margin-left: auto;
+  padding: 0 16px;
+  border: 1px solid transparent;
+  border-radius: 0;
+  background: #f7e8e8;
+  color: var(--text);
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  outline: none;
+}
+
+.latin-input::placeholder {
+  color: #555;
+  opacity: 1;
+}
+
+.latin-input:focus {
+  border-color: var(--line);
+  background: #fff7f7;
+}
+
+.tester-text {
+  min-height: 360px;
+  padding: 72px 0 34px;
+  outline: none;
+  font-size: 110px;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+.specimen-row {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 30px;
+  padding: 26px 0;
+  border-top: 1px solid var(--line);
+}
+
+.specimen-row > span {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.specimen-xl {
+  font-size: clamp(70px, 11vw, 170px);
+  line-height: 1.05;
+}
+
+.specimen-lg {
+  font-size: clamp(48px, 7vw, 105px);
+  line-height: 1.14;
+}
+
+.specimen-md {
+  max-width: 1200px;
+  font-size: clamp(28px, 3.8vw, 58px);
+  line-height: 1.3;
+}
+
+/* =========================================================
+   GLYPHS
+   Continuous 15-column grid.
+   Category names occupy one grid cell, so the grid never
+   breaks into short partial rows between categories.
+   ========================================================= */
+
+.glyphs-section {
+  padding: 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.glyphs-heading {
+  min-height: 150px;
+  padding: 18px 16px 20px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.glyph-label {
+  margin-bottom: 18px;
+}
+
+.glyphs-heading h2 {
+  margin: 0;
+  font-size: clamp(72px, 7.2vw, 128px);
+  line-height: 0.85;
+  font-weight: 400;
+  letter-spacing: -0.06em;
+}
+
+.glyph-inspector {
+  max-width: 520px;
+  padding-bottom: 8px;
+  text-align: right;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.glyph-inspector strong {
+  font-weight: 600;
+}
+
+/*
+  One single grid for every category.
+  Border is owned by the grid on top/left and by every cell
+  on right/bottom, so adjacent cells never create a double line.
+*/
+.glyph-grid-continuous {
+  display: grid;
+  grid-template-columns: repeat(15, minmax(0, 1fr));
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+/* Reset default button border first. This fixes the thick/doubled lines. */
+.glyph-cell,
+.glyph-category-cell,
+.glyph-empty-cell {
+  appearance: none;
+  border: 0;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  margin: 0;
+  min-width: 0;
+  height: clamp(96px, 7.1vw, 136px);
+  background: #fff;
+  color: var(--text);
+}
+
+/* Actual glyph */
+.glyph-cell {
+  position: relative;
+  padding: 0;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.glyph-cell:hover,
+.glyph-cell:focus-visible {
+  background: #f4f4f4;
+  outline: none;
+}
+
+.glyph-cell.is-selected {
+  background: #ededed;
+}
+
+/*
+  Use real flex centering instead of absolute inset positioning.
+  translateY compensates for the visual baseline of Javanese glyphs,
+  which otherwise appears too high in the box.
+*/
+.glyph-preview {
+  position: absolute;
+  inset: 0 8px 22px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 8px;
+  font-size: clamp(32px, 2.65vw, 50px);
+  line-height: 1;
+  text-align: center;
+  transform: translateY(4px);
+}
+
+.glyph-name {
+  position: absolute;
+  left: 7px;
+  right: 7px;
+  bottom: 6px;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 8px;
+  line-height: 1.1;
+  color: #555;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/*
+  Category marker is itself one cell.
+  This is the key change requested in the mockup:
+  "Aksara Swara", "Sandangan", etc. flow inside the same 15-col grid.
+*/
+.glyph-category-cell {
+  padding: 10px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.glyph-category-cell strong {
+  max-width: 95px;
+  font-size: 9px;
+  line-height: 1.05;
+  font-weight: 600;
+}
+
+.glyph-category-cell span {
+  margin-top: 5px;
+  font-size: 7px;
+  line-height: 1.1;
+  color: var(--muted);
+}
+
+/* Blank cells only exist to complete the final 15-cell row. */
+.glyph-empty-cell {
+  pointer-events: none;
+}
+
+/* Keep exactly 15 columns for presentation-sized desktop screens. */
+@media (max-width: 1200px) {
+  .glyph-grid-continuous {
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+  }
+
+  .glyph-cell,
+  .glyph-category-cell,
+  .glyph-empty-cell {
+    height: 112px;
+  }
+
+  .glyph-preview {
+    font-size: 38px;
+  }
+}
+
+@media (max-width: 760px) {
+  .latin-input {
+    flex-basis: 100%;
+    min-width: 100%;
+    margin-left: 0;
+  }
+
+  .glyphs-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .glyph-inspector {
+    text-align: left;
+  }
+
+  .glyph-grid-continuous {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .glyph-cell,
+  .glyph-category-cell,
+  .glyph-empty-cell {
+    height: 108px;
+  }
+
+  .glyph-preview {
+    font-size: 34px;
+  }
+}
+
+@media (max-width: 480px) {
+  .glyph-grid-continuous {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* =========================================================
+   ABOUT FONT
+   ========================================================= */
+
+.about-font-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(480px, 1.25fr);
+  gap: 70px;
+  min-height: 520px;
+  padding: 24px 16px 70px;
+  border-bottom: 1px solid var(--line);
+}
+
+.about-title h2 {
+  margin: 18px 0 0;
+  font-size: clamp(64px, 6.8vw, 118px);
+  line-height: 0.95;
+  font-weight: 400;
+  letter-spacing: -0.055em;
+}
+
+.about-copy {
+  padding-top: 24px;
+}
+
+.about-copy > p {
+  max-width: 760px;
+  margin: 0 0 22px;
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+.about-table {
+  margin-top: 42px;
+  border-top: 1px solid var(--line);
+}
+
+.about-row {
+  display: grid;
+  grid-template-columns: 190px 1fr;
+  gap: 24px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.about-row span,
+.about-row strong {
+  font-size: 12px;
+}
+
+.about-row strong {
+  font-weight: 500;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1400px) {
+  .glyph-grid-full {
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+  }
+
+  .glyph-cell:nth-child(15n) {
+    border-right: 1px solid var(--line);
+  }
+
+  .glyph-cell:nth-child(10n) {
+    border-right: 0;
+  }
+}
+
+@media (max-width: 980px) {
+  .glyph-grid-full {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .glyph-cell:nth-child(10n) {
+    border-right: 1px solid var(--line);
+  }
+
+  .glyph-cell:nth-child(6n) {
+    border-right: 0;
+  }
+
+  .about-font-section {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 760px) {
+  .detail-hero-sample {
+    white-space: normal;
+  }
+
+  .specimen-row {
+    grid-template-columns: 1fr;
+  }
+
+  .tester-text {
+    font-size: 70px;
+  }
+
+  .glyphs-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .glyph-inspector {
+    text-align: left;
+  }
+
+  .glyph-grid-full {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .glyph-cell:nth-child(6n) {
+    border-right: 1px solid var(--line);
+  }
+
+  .glyph-cell:nth-child(4n) {
+    border-right: 0;
+  }
+
+  .about-font-section {
+    grid-template-columns: 1fr;
+  }
+
+  .about-row {
+    grid-template-columns: 120px 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .glyph-grid-full {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .glyph-cell:nth-child(4n) {
+    border-right: 1px solid var(--line);
+  }
+
+  .glyph-cell:nth-child(3n) {
+    border-right: 0;
+  }
+}

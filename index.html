@@ -1,10 +1,173 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-    <title>Benabrid</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aksarakatnya</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-    <h1>Welcome to Benabrid</h1>
-    <p>Website is under construction.</p>
+  <header class="site-header">
+    <nav class="nav-grid" aria-label="Main navigation">
+      <button class="nav-cell nav-button" id="fontsMenuButton" type="button" aria-expanded="false">Fonts</button>
+      <a class="nav-cell" href="#license">License</a>
+      <a class="nav-cell brand-cell" href="./index.html" aria-label="Aksarakatnya home">
+        <span class="brand-side">cultural typefaces</span>
+        <img src="./assets/images/aksarakatnya.svg" alt="Aksarakatnya" class="brand-logo">
+        <span class="brand-side brand-side-right">foundry</span>
+      </a>
+      <a class="nav-cell" href="#signin">Sign In</a>
+      <a class="nav-cell" href="#cart">Cart</a>
+    </nav>
+
+    <div class="mega-menu" id="fontsMegaMenu" aria-hidden="true">
+      <div class="mega-column">
+        <h2>Commercial Font</h2>
+        <div class="mega-links">
+          <a href="./font.html?id=aksa-jawa">Aksajawa Collection</a>
+          <a href="./font.html?id=katharsist">Katharsist</a>
+          <a href="./font.html?id=kinanthi">Kinanthi</a>
+          <a href="./font.html?id=kucrit">Kucrit</a>
+          <a href="./font.html?id=mrajakrasa">Mrajakrasa</a>
+          <a href="./font.html?id=padmaolya">Padmaolya</a>
+          <a href="./font.html?id=roncenbranta">roncenbranta</a>
+          <a href="./font.html?id=swarna">Swarna</a>
+        </div>
+        <a class="mega-more" href="#collection">Explore All Collection</a>
+      </div>
+
+      <div class="mega-column">
+        <h2>Custom Fonts</h2>
+        <div class="mega-links">
+          <a href="#">Tepas Tandha Yekti Karaton Yogyakarta</a>
+          <a href="#">Komunitas Kairaga Sunda</a>
+          <a href="#">Kunto Aji - Mantra Mantra</a>
+          <a href="#">Institut Seni Padang Panjang</a>
+          <a href="#">Joko Anwar - Perempuan Tanah Jahanam</a>
+        </div>
+        <a class="mega-more" href="#">Explore Custom Works</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-section">
+      <img src="./assets/images/illusUtama.jpg" alt="Aksarakatnya featured type illustration" class="hero-image">
+
+      <div class="hero-caption">
+        <p>
+          <strong>New Release: roncenbranta</strong>
+          <span>A refined typeface from Aksarakatnya.</span>
+        </p>
+        <a class="outline-button" href="./font.html?id=roncenbranta">View More</a>
+      </div>
+    </section>
+
+    <section class="intro-section" id="license">
+      <h1>Fonts that scale with you. From commercial fonts to custom typefaces for brands.</h1>
+      <a href="#" class="outline-button intro-button">Discover License Plans</a>
+    </section>
+
+    <section class="font-grid" id="collection">
+      <a class="font-card" href="./font.html?id=aksa-jawa">
+        <div class="card-top"><span>Aksajawa Collection</span><span>Learn More</span></div>
+        <div class="font-preview font-aksa">ꦄꦏ꧀ꦱꦗꦮ</div>
+        <div class="card-bottom"><span>Regular</span><span>Javanese</span></div>
+      </a>
+
+      <a class="font-card" href="./font.html?id=katharsist">
+        <div class="card-top"><span>Katharsist</span><span>Learn More</span></div>
+        <div class="font-preview font-katharsist">ꦏꦛꦂꦱꦶꦱ꧀</div>
+        <div class="card-bottom"><span>Regular</span><span>Display</span></div>
+      </a>
+
+      <a class="font-card" href="./font.html?id=kinanthi">
+        <div class="card-top"><span>Kinanthi</span><span>Learn More</span></div>
+        <div class="font-preview font-kinanthi">ꦏꦶꦤꦤ꧀ꦛꦶ</div>
+        <div class="card-bottom"><span>Regular</span><span>Display</span></div>
+      </a>
+
+      <a class="font-card" href="./font.html?id=kucrit">
+        <div class="card-top"><span>Kucrit</span><span>Learn More</span></div>
+        <div class="font-preview font-kucrit">ꦏꦸꦕꦿꦶꦠ꧀</div>
+        <div class="card-bottom"><span>Italic</span><span>Display</span></div>
+      </a>
+
+      <a class="font-card" href="./font.html?id=mrajakrasa">
+        <div class="card-top"><span>Mrajakrasa</span><span>Learn More</span></div>
+        <div class="font-preview font-mrajakrasa">ꦩꦿꦗꦏ꧀ꦫꦱ</div>
+        <div class="card-bottom"><span>Regular</span><span>Display</span></div>
+      </a>
+
+      <a class="font-card" href="./font.html?id=padmaolya">
+        <div class="card-top"><span>Padmaolya</span><span>Learn More</span></div>
+        <div class="font-preview font-padmaolya">ꦥꦢ꧀ꦩꦪꦺꦴꦭꦾ</div>
+        <div class="card-bottom"><span>Regular</span><span>Display</span></div>
+      </a>
+
+      <a class="font-card" href="./font.html?id=roncenbranta">
+        <div class="card-top"><span>Roncenbranta</span><span>Learn More</span></div>
+        <div class="font-preview font-roncenbranta">ꦫꦺꦴꦤ꧀ꦕꦺꦤ꧀ꦧꦿꦤ꧀ꦠ</div>
+        <div class="card-bottom"><span>Regular</span><span>Display</span></div>
+      </a>
+
+      <a class="font-card" href="./font.html?id=swarna">
+        <div class="card-top"><span>Swarna</span><span>Learn More</span></div>
+        <div class="font-preview font-swarna">ꦱ꧀ꦮꦂꦤ</div>
+        <div class="card-bottom"><span>Italic</span><span>Display</span></div>
+      </a>
+    </section>
+
+    <section class="explore-row">
+      <a class="outline-button explore-button" href="#collection">Explore All Collection</a>
+    </section>
+
+    <section class="subscribe-section">
+      <h2>Subscribe for Aksarakatnya Releases</h2>
+      <p>Get typography tips, font releases, and studio updates straight to your inbox.</p>
+      <form class="subscribe-form" onsubmit="return false;">
+        <input type="text" placeholder="Full name">
+        <input type="email" placeholder="Email address">
+        <label class="checkbox-row">
+          <input type="checkbox">
+          <span>I agree to receive updates from Aksarakatnya.</span>
+        </label>
+        <button type="submit">Join the List</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer-grid">
+    <div class="footer-column">
+      <h3>Company</h3>
+      <p>Yogyakarta<br>Indonesia</p>
+      <p class="copyright">© 2026 Aksarakatnya Foundry.</p>
+    </div>
+    <div class="footer-column">
+      <h3>Fonts</h3>
+      <a href="#collection">Commercial Fonts</a>
+      <a href="#">Custom Fonts</a>
+      <a href="#">Trial Fonts</a>
+    </div>
+    <div class="footer-column">
+      <h3>Resources</h3>
+      <a href="#">About</a>
+      <a href="#">Studio Notes</a>
+      <a href="#">Fonts In Use</a>
+      <a href="#">Contact</a>
+    </div>
+    <div class="footer-column">
+      <h3>Support</h3>
+      <a href="#">Font Licensing</a>
+      <a href="#">FAQs</a>
+      <a href="#">Terms & Conditions</a>
+      <a href="#">Privacy Policies</a>
+    </div>
+  </footer>
+
+  <script src="./assets/js/main.js"></script>
 </body>
 </html>
